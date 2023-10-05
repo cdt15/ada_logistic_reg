@@ -40,7 +40,6 @@ fit <- glmnet(
     as.matrix(y),
     lambda = 0,
     family = "binomial",
-    standardize=FALSE,
 )
 coef <- coef(fit, s=fit$lmabda.min)
 coef <- as.matrix(coef)[-1, ]
@@ -53,7 +52,6 @@ fit <- glmnet(
     alpha = 1,
     penalty.factor = penalty_factor,
     family = "binomial",
-    standardize=FALSE,
 )
 
 # bic
